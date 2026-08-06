@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+:root {
+  --cream: #F7F3E9;
+  --brown: #8C6A4A;
+  --red: #E88C7D;
+  --yellow: #F2C14E;
+  --light-brown: #C5A485;
+  --bubble-shadow: rgba(43, 51, 40, 0.75);
+  --highlight: rgba(242, 193, 78, 0.25);
+  --dark-highlight: rgba(197, 164, 133, 0.25);
+  --nunito: "Nunito", sans-serif;
+}
