@@ -4,55 +4,55 @@ const theme = createTheme({
   typography: {
     fontFamily: '"Nunito", sans-serif',
 
-    h1: {
-      fontFamily: '"Fredoka One", sans-serif',
+    primary1: {
+      fontFamily: '"Satoshi", sans-serif',
       fontWeight: 400,
       fontSize: "3rem"
     },
 
-    h2: {
-      fontFamily: '"Fredoka One", sans-serif',
+    primary2: {
+      fontFamily: '"Satoshi", sans-serif',
       fontWeight: 400,
       fontSize: "2.5rem"
     },
 
-    h23: {
-      fontFamily: '"Fredoka One", sans-serif',
+    primary3: {
+      fontFamily: '"Satoshi", sans-serif',
       fontWeight: 400,
       fontSize: "2rem"
     },
 
-    h3: {
-      fontFamily: '"Fredoka One", sans-serif',
+    primary4: {
+      fontFamily: '"Satoshi", sans-serif',
       fontWeight: 300,
       fontSize: "1.5rem"
     },
 
-    h34: {
-      fontFamily: '"Fredoka", sans-serif',
-      fontWeight: 650,
+    primary5: {
+      fontFamily: '"Satoshi", sans-serif',
+      fontWeight: 700,
       fontSize: "1.4rem"
     },
 
-    h4: {
-      fontFamily: '"Fredoka", sans-serif',
-      fontWeight: 550,
+    primary6: {
+      fontFamily: '"Satoshi", sans-serif',
+      fontWeight: 500,
       fontSize: "1.1rem"
     },
 
-    body1: {
+    secondary1: {
       fontFamily: '"Nunito", sans-serif',
       fontWeight: 300,
-      fontSize: "1.2rem"
+      fontSize: "1.5rem"
     },
 
-    body2: {
+    secondary2: {
       fontFamily: '"Nunito", sans-serif',
       fontWeight: 300,
       fontSize: "1.1rem"
     },
 
-    body3: {
+    secondary3: {
       fontFamily: '"Nunito", sans-serif',
       fontWeight: 300,
       fontSize: "0.8rem"
@@ -77,8 +77,8 @@ const theme = createTheme({
     },
 
     button: {
-      fontFamily: '"Fredoka", sans-serif',
-      fontWeight: 200,
+      fontFamily: '"Satoshi", sans-serif',
+      fontWeight: 300,
       textTransform: "none", // Prevents ALL CAPS buttons
     },
   },

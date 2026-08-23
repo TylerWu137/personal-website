@@ -1,13 +1,27 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useRef } from "react";
+import {Stack, Box, Typography, Button, Link} from "@mui/material";
 
-import HomeScreen from "./screens/HomeScreen";
+import NavBar from "./components/NavBar";
+import AboutSection from "./sections/AboutSection";
+
+import { NavigationProvider } from "./contexts/NavigationContext";
+
 
 export default function App() {
+
+  const scrollToSection = (ref) => {
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomeScreen />} />
-      </Routes>
-    </BrowserRouter>
+    <NavigationProvider>
+      <Stack className="page" sx={{height: "100%"}}>
+        <NavBar sx={{height: "10%"}} />
+        <AboutSection className="section"/>
+      </Stack>
+    </NavigationProvider>
   );
 }

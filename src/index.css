@@ -1,3 +1,73 @@
+@font-face {
+    font-family: "Satoshi";
+    src: url("./assets/fonts/Satoshi-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("./assets/fonts/Satoshi-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("./assets/fonts/Satoshi-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("./assets/fonts/Satoshi-Italic.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("./assets/fonts/Satoshi-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("./assets/fonts/Satoshi-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("./assets/fonts/Satoshi-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("./assets/fonts/Satoshi-BoldItalic.woff") format("woff");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("./assets/fonts/Satoshi-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url("./assets/fonts/Satoshi-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +77,39 @@ html, body, #root {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  /* Makes the entire page scroll */
+  min-height: 100vh;
+
+  /* Snap scrolling */
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  min-height: 100vh;
+
+  /* Each section becomes a snap point */
+  scroll-snap-align: start;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 :root {
+  --nunito: "Nunito", sans-serif;
+
+  --primary: #5A5A63;
+  --secondary: #E4E6ED;
+
   --cream: #F7F3E9;
   --brown: #8C6A4A;
   --red: #E88C7D;
@@ -16,5 +118,4 @@ html, body, #root {
   --bubble-shadow: rgba(43, 51, 40, 0.75);
   --highlight: rgba(242, 193, 78, 0.25);
   --dark-highlight: rgba(197, 164, 133, 0.25);
-  --nunito: "Nunito", sans-serif;
 }
