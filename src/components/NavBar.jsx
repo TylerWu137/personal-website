@@ -19,7 +19,8 @@ export default function NavBar({ sx }) {
   );
 
   return (
-    <Stack spacing={2} direction="row" sx={{alignItems: "center", pl: 2, pr: 5, backgroundColor: "var(--secondary)", ...sx}}>
+    <Stack spacing={2} direction="row" sx={{alignItems: "center", backgroundColor: "var(--secondary)", ...sx}}>
+      <Box></Box>
       <Box sx={{height: "60%", aspectRatio: "1 / 1", border: 1}}></Box>
       <Typography variant="secondary1">Tyler Wu</Typography>
       <Box sx={{flex: 1}} />
@@ -28,6 +29,8 @@ export default function NavBar({ sx }) {
         {NavButton("Portfolio", portfolioRef)}
         {NavButton("Contact", contactRef)}
       </Stack>
+      <Box></Box>
+      <Box></Box>
     </Stack>
   );
 }

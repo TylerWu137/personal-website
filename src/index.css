@@ -87,7 +87,7 @@ body {
 
 .page {
   /* Makes the entire page scroll */
-  min-height: 100vh;
+  min-height: 90vh;
 
   /* Snap scrolling */
   scroll-snap-type: y mandatory;
