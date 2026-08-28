@@ -12,7 +12,7 @@ const theme = createTheme({
 
     primary2: {
       fontFamily: '"Satoshi", sans-serif',
-      fontWeight: 500,
+      fontWeight: 600,
       fontSize: "2.5rem"
     },
 
@@ -24,7 +24,7 @@ const theme = createTheme({
 
     primary4: {
       fontFamily: '"Satoshi", sans-serif',
-      fontWeight: 300,
+      fontWeight: 500,
       fontSize: "1.5rem"
     },
 

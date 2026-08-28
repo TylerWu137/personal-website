@@ -21,9 +21,10 @@ export default function AboutSection({sx}) {
               borderRadius: 99,
             }}
           />
-          <Box sx={{flex: 0.3}}/>
+          <Box sx={{flex: 0.5}}/>
           <Stack spacing={2} sx={{flex: 10, minWidth: 0}}>
             <Typography variant="primary2">Hi Everyone!</Typography>
+            <Box sx={{height: 4}}/>
             <Typography variant="secondary2" sx={{overflowWrap: "break-word",}}>I'm Tyler. Lorem ipsum dolor sit amet, consectetur 
               adipiscing elit. Sed lectus elit, posuere sed sem at, 
               efficitur luctus mauris. Vestibulum vel lectus eget 
@@ -36,7 +37,6 @@ export default function AboutSection({sx}) {
               posuere nec purus.
             </Typography>
             <Stack spacing={2} direction="row">
-              <Box sx={{height: "40px", aspectRatio: "1 / 1", backgroundColor: "var(--primary)", borderRadius: 2}}/>
               <Box sx={{height: "40px", aspectRatio: "1 / 1", backgroundColor: "var(--primary)", borderRadius: 2}}/>
               <Box sx={{height: "40px", aspectRatio: "1 / 1", backgroundColor: "var(--primary)", borderRadius: 2}}/>
               <Box sx={{height: "40px", aspectRatio: "1 / 1", backgroundColor: "var(--primary)", borderRadius: 2}}/>
