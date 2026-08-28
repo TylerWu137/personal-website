@@ -26,7 +26,7 @@ export default function App() {
         },}}
       >
         <AboutSection className="section" sx={{minHeight: "100%", height: "100%", width: "65%", boxSizing: "border-box"}}/>
-        <PortfolioSection className="section" sx={{minHeight: "100%", width: "65%", boxSizing: "border-box"}}/>
+        <PortfolioSection className="section" sx={{minHeight: "100%", height: "auto", flexShrink: 0, width: "65%", boxSizing: "border-box"}}/>
         <ContactSection className="section" sx={{minHeight: "100%", width: "65%", boxSizing: "border-box"}}/>
         <Footer className="section" sx={{minHeight: "20%", minWidth: "100%", boxSizing: "border-box"}}></Footer>
       </Stack>
