@@ -16,36 +16,28 @@ import { useNavigation } from "../contexts/NavigationContext";
 export default function PortfolioSection({sx}) {
   const { aboutRef, portfolioRef, contactRef, scrollToSection } = useNavigation();
 
-  const PortfolioItem = () => (
+  const PortfolioItem = (title, dates, description) => (
     <TimelineItem>
       <TimelineOppositeContent
         align="right"
         variant="primary6"
         sx={{
-          m: '0 0',
+          m: 0,
+          px: 4
         }}
       >
-        June 2026 - Present
+        {dates}
       </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineDot/>
         <TimelineConnector />
       </TimelineSeparator>
-      <TimelineContent sx={{ py: '2px', mb: 4, px: 2 }}>
+      <TimelineContent sx={{ mt: -2, mb: 4, px: 4, }}>
         <Stack spacing={1}>
-          <Typography variant="h6" component="span">
-            Eat
+          <Typography variant="primary3" component="span">
+            {title}
           </Typography>
-          <Typography>adipiscing elit. Sed lectus elit, posuere sed sem at, 
-            efficitur luctus mauris. Vestibulum vel lectus eget 
-            nisi bibendum interdum. Aenean tincidunt sodales arcu 
-            sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-            posuere nec purus.
-            efficitur luctus mauris. Vestibulum vel lectus eget 
-            nisi bibendum interdum. Aenean tincidunt sodales arcu 
-            sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-            posuere nec purus.
-          </Typography>
+          <Typography>{description}</Typography>
         </Stack>
       </TimelineContent>
     </TimelineItem>
@@ -64,11 +56,61 @@ export default function PortfolioSection({sx}) {
           </TimelineSeparator>
           <TimelineContent/>
         </TimelineItem>
-        {PortfolioItem()}
-        {PortfolioItem()}
-        {PortfolioItem()}
-        {PortfolioItem()}
-        {PortfolioItem()}
+        {PortfolioItem("Critter Grove", "June 2026 - Present", 
+          `adipiscing elit. Sed lectus elit, posuere sed sem at, 
+          efficitur luctus mauris. Vestibulum vel lectus eget 
+          nisi bibendum interdum. Aenean tincidunt sodales arcu 
+          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
+          posuere nec purus.
+          efficitur luctus mauris. Vestibulum vel lectus eget 
+          nisi bibendum interdum. Aenean tincidunt sodales arcu 
+          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
+          posuere nec purus.`
+        )}
+        {PortfolioItem("Project Gamma", "January 2025 - June 2025", 
+          `adipiscing elit. Sed lectus elit, posuere sed sem at, 
+          efficitur luctus mauris. Vestibulum vel lectus eget 
+          nisi bibendum interdum. Aenean tincidunt sodales arcu 
+          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
+          posuere nec purus.
+          efficitur luctus mauris. Vestibulum vel lectus eget 
+          nisi bibendum interdum. Aenean tincidunt sodales arcu 
+          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
+          posuere nec purus.`
+        )}
+        {PortfolioItem("AlBuddy", "March 2024 - May 2024", 
+          `adipiscing elit. Sed lectus elit, posuere sed sem at, 
+          efficitur luctus mauris. Vestibulum vel lectus eget 
+          nisi bibendum interdum. Aenean tincidunt sodales arcu 
+          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
+          posuere nec purus.
+          efficitur luctus mauris. Vestibulum vel lectus eget 
+          nisi bibendum interdum. Aenean tincidunt sodales arcu 
+          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
+          posuere nec purus.`
+        )}
+        {PortfolioItem("Pokemon-based Game", "May 2022 - June 2023", 
+          `adipiscing elit. Sed lectus elit, posuere sed sem at, 
+          efficitur luctus mauris. Vestibulum vel lectus eget 
+          nisi bibendum interdum. Aenean tincidunt sodales arcu 
+          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
+          posuere nec purus.
+          efficitur luctus mauris. Vestibulum vel lectus eget 
+          nisi bibendum interdum. Aenean tincidunt sodales arcu 
+          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
+          posuere nec purus.`
+        )}
+        {PortfolioItem("Multi-threaded Socket Chat", "April 2023", 
+          `adipiscing elit. Sed lectus elit, posuere sed sem at, 
+          efficitur luctus mauris. Vestibulum vel lectus eget 
+          nisi bibendum interdum. Aenean tincidunt sodales arcu 
+          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
+          posuere nec purus.
+          efficitur luctus mauris. Vestibulum vel lectus eget 
+          nisi bibendum interdum. Aenean tincidunt sodales arcu 
+          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
+          posuere nec purus.`
+        )}
       </Timeline>
     </Box>
   );
