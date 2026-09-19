@@ -1,9 +1,59 @@
 import {Stack, Box, Typography, Button, Link} from "@mui/material";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
 
+import { useState } from "react";
 import { useNavigation } from "../contexts/NavigationContext";
 
 export default function AboutSection({sx}) {
   const { aboutRef, portfolioRef, contactRef, scrollToSection } = useNavigation();
+  const [copiedAbout, setCopiedAbout] = useState(false);
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText("tylerwu137@gmail.com");
+    setCopiedAbout(true);
+
+    setTimeout(() => {
+      setCopiedAbout(false);
+    }, 1000);
+  };
+
+  const socialIconSx = {
+    fontSize: "40px",
+    color: "var(--primary)",
+    transition: "transform 0.2s ease, color 0.2s ease",
+    "&:hover": {
+      color: "black",
+      transform: "scale(1.05)",
+    },
+  };
+
+  const socialIconBox = (link, icon) => (
+    <Box sx={{
+      height: "42px",
+      aspectRatio: "1 / 1",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}>
+      <Link
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        underline="none"
+        sx={{
+          height: "42px",
+          aspectRatio: "1 / 1",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {icon}
+      </Link>
+    </Box>
+  );
 
   return (
     <Box ref={aboutRef} sx={{ width: "100%",
@@ -25,21 +75,30 @@ export default function AboutSection({sx}) {
           <Stack spacing={2} sx={{flex: 10, minWidth: 0}}>
             <Typography variant="primary2">Hi Everyone!</Typography>
             <Box sx={{height: 4}}/>
-            <Typography variant="secondary2" sx={{overflowWrap: "break-word",}}>I'm Tyler. Lorem ipsum dolor sit amet, consectetur 
-              adipiscing elit. Sed lectus elit, posuere sed sem at, 
-              efficitur luctus mauris. Vestibulum vel lectus eget 
-              nisi bibendum interdum. Aenean tincidunt sodales arcu 
-              sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-              posuere nec purus.
-              efficitur luctus mauris. Vestibulum vel lectus eget 
-              nisi bibendum interdum. Aenean tincidunt sodales arcu 
-              sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-              posuere nec purus.
+            <Typography variant="secondary2" sx={{overflowWrap: "break-word",}}> I'm Tyler, and I'm a senior at Stony Brook University studying Computer Science (Honors) and Physics, pursuing minors in Digital/Studio Arts as well. I love bridging software development and game programming with design and art by creating applications that are engaging, user-centered, and visually expressive.
+
             </Typography>
             <Stack spacing={2} direction="row">
-              <Box sx={{height: "40px", aspectRatio: "1 / 1", backgroundColor: "var(--primary)", borderRadius: 2}}/>
-              <Box sx={{height: "40px", aspectRatio: "1 / 1", backgroundColor: "var(--primary)", borderRadius: 2}}/>
-              <Box sx={{height: "40px", aspectRatio: "1 / 1", backgroundColor: "var(--primary)", borderRadius: 2}}/>
+              {socialIconBox("https://www.linkedin.com/in/tyler-wu-software-dev/", 
+                <LinkedInIcon sx={socialIconSx} />
+              )}
+              {socialIconBox("https://github.com/TylerWu137", 
+                <GitHubIcon sx={socialIconSx} />
+              )}
+              <Box sx={{
+                height: "42px",
+                aspectRatio: "1 / 1",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}>
+                <Box>
+                  {copiedAbout ? 
+                    <Typography variant="secondary2">Copied!</Typography> : 
+                    <EmailIcon sx={socialIconSx} onClick={copyEmail}/>}
+                </Box>
+                
+              </Box>
             </Stack>
             <Box
             sx={{
