@@ -26,6 +26,7 @@ export default function AboutSection({sx}) {
     "&:hover": {
       color: "black",
       transform: "scale(1.05)",
+      cursor: "pointer",
     },
   };
 

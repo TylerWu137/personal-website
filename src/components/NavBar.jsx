@@ -15,6 +15,7 @@ export default function NavBar({ sx }) {
         "&:hover .section-text": {
           color: "black",
           transform: "scale(1.07)",
+          cursor: "pointer",
         },
       }}
       onClick={() => scrollToSection(ref)}
