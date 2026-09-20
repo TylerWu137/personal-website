@@ -12,36 +12,57 @@ import HotelIcon from '@mui/icons-material/Hotel';
 import RepeatIcon from '@mui/icons-material/Repeat';
 
 import { useNavigation } from "../contexts/NavigationContext";
+import AutoFitText from "../components/AutoFitText";
 
 export default function PortfolioSection({sx}) {
   const { aboutRef, portfolioRef, contactRef, scrollToSection } = useNavigation();
 
-  const PortfolioItem = (title, dates, description) => (
-    <TimelineItem>
-      <TimelineOppositeContent
-        align="right"
-        variant="primary6"
-        sx={{
-          m: 0,
-          px: 4
-        }}
-      >
-        {dates}
-      </TimelineOppositeContent>
-      <TimelineSeparator>
-        <TimelineDot/>
-        <TimelineConnector />
-      </TimelineSeparator>
-      <TimelineContent sx={{ mt: -2, mb: 4, px: 4, }}>
-        <Stack spacing={1}>
-          <Typography variant="primary3" component="span">
-            {title}
-          </Typography>
-          <Typography>{description}</Typography>
-        </Stack>
-      </TimelineContent>
-    </TimelineItem>
-  );
+  const PortfolioItem = (title, position, dates, description, side) => {
+    const isLeft = side === "left";
+
+    return (
+      <>
+      <TimelineItem position={side} sx={{alignItems: "center", minHeight: 0}}>
+        <TimelineOppositeContent
+          align={isLeft ? "left" : "right"}
+          variant="primary6"
+          sx={{ m: 0, px: 4 }}
+        >
+          {dates}
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot sx={{my: 0}}/>
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent sx={{px: 4 }}>
+          <Stack spacing={1}>
+            <Stack
+              direction={isLeft ? "row-reverse" : "row"}
+              spacing={2}
+              
+              sx={{ alignItems: "center"}}
+            >
+              <Typography variant="primary6" sx={{color: "var(--primary)"}}>
+                • {position} •
+              </Typography>
+              <AutoFitText variant="primary3" minFontSize={12} maxFontSize={28}>
+                {title}
+              </AutoFitText>
+            </Stack>
+          </Stack>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem position={side}>
+        <TimelineSeparator>
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>
+          <Typography sx={{ mb: 16, px: 2.5, color: "var(--primary)"}}>{description}</Typography>
+        </TimelineContent>
+      </TimelineItem>
+      </>
+    );
+  };
 
   return (
     <Box sx={{ width: "100%",
@@ -56,60 +77,20 @@ export default function PortfolioSection({sx}) {
           </TimelineSeparator>
           <TimelineContent/>
         </TimelineItem>
-        {PortfolioItem("Critter Grove", "June 2026 - Present", 
-          `adipiscing elit. Sed lectus elit, posuere sed sem at, 
-          efficitur luctus mauris. Vestibulum vel lectus eget 
-          nisi bibendum interdum. Aenean tincidunt sodales arcu 
-          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-          posuere nec purus.
-          efficitur luctus mauris. Vestibulum vel lectus eget 
-          nisi bibendum interdum. Aenean tincidunt sodales arcu 
-          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-          posuere nec purus.`
+        {PortfolioItem("Critter Grove", "Creator", "June 2026 - Present",
+          `a pet-collection productivity and wellness app`, "right"
         )}
-        {PortfolioItem("Project Gamma", "January 2025 - June 2025", 
-          `adipiscing elit. Sed lectus elit, posuere sed sem at, 
-          efficitur luctus mauris. Vestibulum vel lectus eget 
-          nisi bibendum interdum. Aenean tincidunt sodales arcu 
-          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-          posuere nec purus.
-          efficitur luctus mauris. Vestibulum vel lectus eget 
-          nisi bibendum interdum. Aenean tincidunt sodales arcu 
-          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-          posuere nec purus.`
+        {PortfolioItem("Project Gamma", "Creator", "January 2025 - June 2025",
+          `a story-based game where you and your companion dog, Gamma, must venture across a post-nuclear war world to collect data on mutated wildlife to determine if living conditions are safe.`, "left"
         )}
-        {PortfolioItem("AlBuddy", "March 2024 - May 2024", 
-          `adipiscing elit. Sed lectus elit, posuere sed sem at, 
-          efficitur luctus mauris. Vestibulum vel lectus eget 
-          nisi bibendum interdum. Aenean tincidunt sodales arcu 
-          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-          posuere nec purus.
-          efficitur luctus mauris. Vestibulum vel lectus eget 
-          nisi bibendum interdum. Aenean tincidunt sodales arcu 
-          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-          posuere nec purus.`
+        {PortfolioItem("AlBuddy Tutoring", "Intern", "March 2024 - May 2024",
+          `a project-driven tutoring start-up platform with professional insight and customized curriculums.`, "right"
         )}
-        {PortfolioItem("Pokemon-based Game", "May 2022 - June 2023", 
-          `adipiscing elit. Sed lectus elit, posuere sed sem at, 
-          efficitur luctus mauris. Vestibulum vel lectus eget 
-          nisi bibendum interdum. Aenean tincidunt sodales arcu 
-          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-          posuere nec purus.
-          efficitur luctus mauris. Vestibulum vel lectus eget 
-          nisi bibendum interdum. Aenean tincidunt sodales arcu 
-          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-          posuere nec purus.`
+        {PortfolioItem("Pokemon-based Game", "Creator", "May 2022 - June 2023",
+          `a mini version of the classic pokemon game.`, "left"
         )}
-        {PortfolioItem("Multi-threaded Socket Chat", "April 2023", 
-          `adipiscing elit. Sed lectus elit, posuere sed sem at, 
-          efficitur luctus mauris. Vestibulum vel lectus eget 
-          nisi bibendum interdum. Aenean tincidunt sodales arcu 
-          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-          posuere nec purus.
-          efficitur luctus mauris. Vestibulum vel lectus eget 
-          nisi bibendum interdum. Aenean tincidunt sodales arcu 
-          sed dapibus. Integer tortor odio, suscipit eu congue quis, 
-          posuere nec purus.`
+        {PortfolioItem("Multi-threaded Socket Chat", "Creator", "April 2023",
+          `a chat application that uses a multi-threaded server and TCP sockets to communicate from client side to server side in Java.`, "right"
         )}
       </Timeline>
     </Box>

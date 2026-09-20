@@ -16,19 +16,59 @@ export default function App() {
   return (
     <Stack sx={{height: "100%", alignItems: "center", width: "100%"}}>
       <NavBar sx={{height: navBarHeight, width: "100%", position: "fixed"}} />
-      <Stack className="page" sx={{
-        height: "90%", alignItems: "center", width: "100%", 
-        marginTop: navBarHeight, 
-        overflowY: "auto", overflowX: "hidden",
-        scrollbarWidth: "none",
-        "&::-webkit-scrollbar": {
-          display: "none",
-        },}}
+      <Stack
+        className="page"
+        sx={{
+          height: "90%",
+          width: "100%",
+          marginTop: navBarHeight,
+
+          alignItems: "flex-start",
+
+          overflowY: "auto",
+          overflowX: "auto",
+
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+        }}
       >
-        <AboutSection className="section" sx={{minHeight: "100%", height: "100%", width: "65%", boxSizing: "border-box"}}/>
-        <PortfolioSection className="section" sx={{minHeight: "100%", height: "auto", flexShrink: 0, width: "65%", boxSizing: "border-box"}}/>
-        <ContactSection className="section" sx={{minHeight: "100%", width: "65%", boxSizing: "border-box"}}/>
-        {/*<Footer sx={{minHeight: "20%", minWidth: "100%", boxSizing: "border-box"}}></Footer>*/}
+        <AboutSection
+          className="section"
+          sx={{
+            minHeight: "100%",
+            height: "100%",
+            minWidth: "1000px",
+            width: "65%",
+            margin: "0 auto",
+            boxSizing: "border-box",
+          }}
+        />
+
+        <PortfolioSection
+          className="section"
+          sx={{
+            minHeight: "100%",
+            height: "auto",
+            flexShrink: 0,
+            minWidth: "1000px",
+            width: "65%",
+            margin: "0 auto",
+            boxSizing: "border-box",
+          }}
+        />
+
+        <ContactSection
+          className="section"
+          sx={{
+            minHeight: "100%",
+            minWidth: "1000px",
+            width: "65%",
+            margin: "0 auto",
+            boxSizing: "border-box",
+          }}
+        />
       </Stack>
     </Stack>
   );
