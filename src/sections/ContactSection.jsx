@@ -1,4 +1,7 @@
 import {Stack, Box, Typography, Grid, Button, Link} from "@mui/material";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
 
 import { useState } from "react";
 
@@ -18,9 +21,21 @@ export default function ContactSection({sx}) {
     }, 1000);
   };
 
-  const contactInfoLine = (type, link) => (
+  const socialIconBox = (icon) => (
+    <Box sx={{
+      height: "100%",
+      aspectRatio: "1 / 1",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}>
+      {icon}
+    </Box>
+  );
+
+  const contactInfoLine = (type, link, icon) => (
     <Stack spacing={2} direction="row" sx={{alignItems: "center"}}>
-      <Box sx={{height: "30px", aspectRatio: "1 / 1", backgroundColor: "var(--primary)", borderRadius: 2}}/>
+      {socialIconBox(icon)}
       <Link
         href={link}
         target="_blank"
@@ -83,10 +98,10 @@ export default function ContactSection({sx}) {
                 <Stack>
                   <Typography variant="primary4">Contact Info</Typography>
                   <Stack sx={{mt: 2}} spacing={1.5}>
-                    {contactInfoLine("LinkedIn", "https://www.linkedin.com/in/tyler-wu-software-dev/")}
-                    {contactInfoLine("Github", "https://github.com/TylerWu137")}
+                    {contactInfoLine("LinkedIn", "https://www.linkedin.com/in/tyler-wu-software-dev/", <LinkedInIcon/>)}
+                    {contactInfoLine("Github", "https://github.com/TylerWu137", <GitHubIcon/>)}
                     <Stack spacing={2} direction="row" sx={{alignItems: "center"}}>
-                      <Box sx={{height: "30px", aspectRatio: "1 / 1", backgroundColor: "var(--primary)", borderRadius: 2}}/>
+                      {socialIconBox(<EmailIcon/>)}
                       <Typography
                         className="linkedin-text"
                         variant="secondary2"
