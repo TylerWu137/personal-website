@@ -10,11 +10,26 @@ export default function NavBar({ sx }) {
       sx={{
         height: "100%",
         display: "flex",
-        alignItems: "center"
+        alignItems: "center",
+
+        "&:hover .section-text": {
+          color: "black",
+          transform: "scale(1.07)",
+        },
       }}
       onClick={() => scrollToSection(ref)}
     >
-      <Typography variant="primary6">{section}</Typography>
+      <Typography
+        className="section-text"
+        variant="primary6"
+        sx={{
+          color: "black",
+          transformOrigin: "center",
+          transition: "color 0.2s ease, transform 0.2s ease",
+        }}
+      >
+        {section}
+      </Typography>
     </Box>
   );
 
